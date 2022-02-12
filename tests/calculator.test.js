@@ -25,4 +25,15 @@ describe('add function', function () {
         const sum = add(2, 3, 4, 6);
         expect(sum).toBe(5);
     });
+    //failure cases
+    it('should throw invalid input when number is not given as input', function () {
+        expect(() => {
+            add([2, 3, 4], 5)
+            }).toThrow('You must enter a number');      
+    });
+    it('should throw error when integer range exceeded', function(){
+        expect(()=>{
+            add(MAX_SAFE_INTEGER+1 , 6)
+        }).toThrow('Input value out of range');
+    });
 });
