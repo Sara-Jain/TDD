@@ -33,7 +33,7 @@ describe('add function', function () {
     });
     it('should throw error when integer range exceeded', function(){
         expect(()=>{
-            add(MAX_SAFE_INTEGER+1 , 6)
+            add(Number.MAX_SAFE_INTEGER+1 , 6)
         }).toThrow('Input value out of range');
     });
 });
