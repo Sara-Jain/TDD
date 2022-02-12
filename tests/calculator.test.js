@@ -13,6 +13,7 @@
 const add = require('../calculator');
 
 describe('add function', function () {
+    //success cases
     it('should give the sum of 2 numbers', function () {
         const sum = add(2, 3);
         expect(sum).toBe(5);

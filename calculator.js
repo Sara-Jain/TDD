@@ -1,5 +1,3 @@
-const { string } = require("yargs");
-
 function add(number1, number2 = 0) {
     if (typeof number1 !== "number" || typeof number2 !== "number") {
         throw new Error("You must enter a number");
