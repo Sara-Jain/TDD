@@ -10,6 +10,10 @@ describe('Repeated Word Generator', function () {
         const val = redundantWordChecker('These words are not repeating', ' ');
         expect(val).toStrictEqual("Strings does not contain repeating words");
     });
+    it('should consider default delimiter to be space when not specified', function () {
+        const val = redundantWordChecker('These words are not repeating');
+        expect(val).toStrictEqual("Strings does not contain repeating words");
+    });
 
     // Failure test cases
     it('should throw an error for any input other than string', function () {
@@ -17,15 +21,18 @@ describe('Repeated Word Generator', function () {
             redundantWordChecker(123123, ' ');
         }).toThrow('You must enter a string');
     });
+
     it('should throw an error for larger string', function () {
         expect(() => {
             redundantWordChecker('asdfggtsgdhsgdyyrewerrt uiuiuifsfskjhkj kjhdkffsjkjh asdfggfsftrewerrt uiuiuikjhkj kjhdkjkjh    asdfggtrewerrt uiuiuikjhkj kjhdkjkjh  asdfggtrewerrt uiuiuikjhkj kjhdkjkjh asdfggtrewerrt uiuiuikjhkj kjhdkjkjh#####asdfggtrewerrt uiuiuikjhkj kjhdkjkjhasdfggtrewerrt uiuiuikjhkj kjhdkjkjh', ' ');
         }).toThrow('String length has to be less than or equal to 100');
     });
-    it('should throw an error when delimiter is not specified', function () {
-        const val = redundantWordChecker('Words words');
-        expect(val).toStrictEqual('Enter the both string and a delimiter');
-    });
+
+    // it('should throw an error when delimiter is not specified', function () {
+    //     expect(() => {
+    //         redundantWordChecker('Words words');
+    //     }).toThrow('Enter both string and a delimiter');
+    // });
 
     it('should throw an error when input string is not specified', function () {
         const val = redundantWordChecker('', ' ');
