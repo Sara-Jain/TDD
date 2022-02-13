@@ -25,8 +25,13 @@ describe('armstrongNumberGenerator', function () {
             }).toThrow('Enter a integer value');
     });
 
-    // // Test cases for isArmstrongNumber
-    // // Failure test cases
+    // Test cases for isArmstrongNumber
+    // Failure test cases
+    it('should throw invalid input when float value is given as input', function () {
+        expect(() => {
+            functionObject.isArmstrongNumber(122.89);
+            }).toThrow('You must enter a integer value');      
+    });
     // it('should return Negative value not allowed for negative value', function () {
     //     const result = functionObject.isArmstrongNum(-12);
     //     expect(result).toEqual('Negative value not allowed');

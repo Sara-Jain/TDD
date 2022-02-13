@@ -14,9 +14,9 @@ function numberOfDigit(number) {
 }
 
 function isArmstrongNumber(number) {
-    // if (typeof (number) !== 'number') {
-    //     return "Invalid datatype"
-    // }
+    if (typeof (number) !== "number" || number % 1 != 0) {
+        throw new Error("You must enter a integer value");
+    }
     // if (number < 0)
     //     return "Negative value not allowed";
     // if (number > 32767 || number < -32768 || number > 32767 || number < -32768) {
