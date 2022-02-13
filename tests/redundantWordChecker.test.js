@@ -33,8 +33,9 @@ describe('Repeated Word Generator', function () {
             redundantWordChecker('', ' ');
         }).toThrow('Empty String not accepted');
     });
-    // it('should throw an error when both string and a delimiter not provided', function () {
-    //     const val = redundantWordChecker();
-    //     expect(val).toStrictEqual('Enter the both string and a delimiter');
-    // });
+    it('should throw an error when string not provided', function () {
+        expect(() => {
+            redundantWordChecker();
+        }).toThrow('Enter a string');
+    });
 })

@@ -1,27 +1,25 @@
-module.exports = function checkRepeatingWords(sentence,delimiter = ' ') {
-    if(sentence === undefined || delimiter === undefined){
-        throw new Error('Enter both string and a delimiter');
+module.exports = function checkRepeatingWords(sentence, delimiter = ' ') {
+    if (sentence === undefined) {
+        throw new Error('Enter a string');
     }
-    if(sentence.length === 0){
+    if (sentence.length === 0) {
         throw new Error('Empty String not accepted');
     }
-    if(typeof sentence !== 'string'){
+    if (typeof sentence !== 'string') {
         throw new Error("You must enter a string");
     }
-    if(sentence.length > 100){
+    if (sentence.length > 100) {
         throw new Error('String length has to be less than or equal to 100');
     }
-    sentence=sentence.toLowerCase();
+    sentence = sentence.toLowerCase();
     const words = sentence.split(delimiter);
     let flag = 0;
     const wordMap = new Map();
     for (let index = 0; index < words.length; index++) {
-        if (wordMap.has(words[index])) 
-        {
+        if (wordMap.has(words[index])) {
             flag = 1;
-        } 
-        else 
-        {
+        }
+        else {
             wordMap.set(words[index], 1);
         }
     }
