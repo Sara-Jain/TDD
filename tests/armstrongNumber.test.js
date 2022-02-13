@@ -48,13 +48,18 @@ describe('armstrongNumberGenerator', function () {
         }).toThrow('Input value range exceeded');
     });
 
-    // // Success test cases
-    // it('should return only armstrong numbers within the given range', function () {
-    //     const val = functionObject.ArmstrongGenerator(0);
-    //     expect(val).toStrictEqual([0]);
-    // });
-    // it('should return only armstrong numbers within the given range', function () {
-    //     const val = functionObject.ArmstrongGenerator(5);
-    //     expect(val).toStrictEqual([0, 1, 2, 3, 4, 5]);
-    // });
+    // Success test cases
+    it('should return true when it is a armstrong numbers', function () {
+        const val = functionObject.isArmstrongNumber(153);
+        expect(val).toStrictEqual(true);
+    });
+
+    it('should return only armstrong numbers within the given range', function () {
+        const val = functionObject.ArmstrongGenerator(0);
+        expect(val).toStrictEqual([0]);
+    });
+    it('should return only armstrong numbers within the given range', function () {
+        const val = functionObject.ArmstrongGenerator(5);
+        expect(val).toStrictEqual([0, 1, 2, 3, 4, 5]);
+    });
 })
