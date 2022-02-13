@@ -18,8 +18,9 @@ describe('Repeated Word Generator', function () {
         }).toThrow('You must enter a string');
     });
     it('should throw an error for larger string', function () {
-        const val = redundantWordChecker('asdfggtrewerrt uiuiuikjhkj kjhdkjkjh asdfggtrewerrt uiuiuikjhkj kjhdkjkjh    asdfggtrewerrt uiuiuikjhkj kjhdkjkjh   asdfggtrewerrt uiuiuikjhkj kjhdkjkjh    asdfggtrewerrt uiuiuikjhkj kjhdkjkjh#####asdfggtrewerrt uiuiuikjhkj kjhdkjkjhasdfggtrewerrt uiuiuikjhkj kjhdkjkjh', ' ');
-        expect(val).toStrictEqual('String length has to be less than or equal to 100');
+        expect(() => {
+            redundantWordChecker('asdfggtsgdhsgdyyrewerrt uiuiuifsfskjhkj kjhdkffsjkjh asdfggfsftrewerrt uiuiuikjhkj kjhdkjkjh    asdfggtrewerrt uiuiuikjhkj kjhdkjkjh  asdfggtrewerrt uiuiuikjhkj kjhdkjkjh asdfggtrewerrt uiuiuikjhkj kjhdkjkjh#####asdfggtrewerrt uiuiuikjhkj kjhdkjkjhasdfggtrewerrt uiuiuikjhkj kjhdkjkjh', ' ');
+        }).toThrow('String length has to be less than or equal to 100');
     });
     it('should throw an error when delimiter is not specified', function () {
         const val = redundantWordChecker('Words words');

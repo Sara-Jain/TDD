@@ -9,7 +9,7 @@ module.exports = function checkRepeatingWords(sentence,delimiter) {
         throw new Error("You must enter a string");
     }
     if(sentence.length > 100){
-        return 'String length has to be less than or equal to 100';
+        throw new Error('String length has to be less than or equal to 100');
     }
     sentence=sentence.toLowerCase();
     const words = sentence.split(delimiter);
