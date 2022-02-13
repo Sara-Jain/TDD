@@ -1,8 +1,8 @@
 function numberOfDigit(number) {
     let digitCount = 0;
-    // if (number === undefined) {
-    //     return "Enter the value"
-    // }
+    if (number === undefined) {
+        throw new Error("Enter a integer value");
+    }
     if (typeof (number) !== "number" || number % 1 != 0) {
         throw new Error("You must enter a integer value");
     }

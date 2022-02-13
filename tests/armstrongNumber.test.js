@@ -12,20 +12,18 @@ describe('armstrongNumberGenerator', function () {
     it('should throw invalid input when number is not given as input', function () {
         expect(() => {
             functionObject.numberOfDigit("random");
-            }).toThrow('You must enter a number');      
+            }).toThrow('You must enter a integer value');      
     });
-    // it('should return number of digits', function () {
-    //     const val = functionObject.numberOfDigit(122.89);
-    //     expect(val).toEqual('Invalid DataType');
-    // });
-    // it('string input should return invalid datatype', function () {
-    //     const val = functionObject.numberOfDigit('12');
-    //     expect(val).toEqual('Invalid DataType');
-    // });
-    // it('should return enter the value when no input is given', function () {
-    //     const val = functionObject.numberOfDigit();
-    //     expect(val).toEqual('Enter the value');
-    // });
+    it('should throw invalid input when float value is given as input', function () {
+        expect(() => {
+            functionObject.numberOfDigit(122.89);
+            }).toThrow('You must enter a integer value');      
+    });
+    it('should prompt to enter the value when no input is given', function () {
+        expect(() => {
+            functionObject.numberOfDigit();
+            }).toThrow('Enter a integer value');
+    });
 
     // // Test cases for isArmstrongNumber
     // // Failure test cases
