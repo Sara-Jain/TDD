@@ -28,18 +28,13 @@ describe('Repeated Word Generator', function () {
         }).toThrow('String length has to be less than or equal to 100');
     });
 
-    // it('should throw an error when delimiter is not specified', function () {
-    //     expect(() => {
-    //         redundantWordChecker('Words words');
-    //     }).toThrow('Enter both string and a delimiter');
-    // });
-
     it('should throw an error when input string is not specified', function () {
-        const val = redundantWordChecker('', ' ');
-        expect(val).toStrictEqual('Empty String not accepted');
+        expect(() => {
+            redundantWordChecker('', ' ');
+        }).toThrow('Empty String not accepted');
     });
-    it('should throw an error when both string and a delimiter not provided', function () {
-        const val = redundantWordChecker();
-        expect(val).toStrictEqual('Enter the both string and a delimiter');
-    });
+    // it('should throw an error when both string and a delimiter not provided', function () {
+    //     const val = redundantWordChecker();
+    //     expect(val).toStrictEqual('Enter the both string and a delimiter');
+    // });
 })

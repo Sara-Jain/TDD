@@ -3,7 +3,7 @@ module.exports = function checkRepeatingWords(sentence,delimiter = ' ') {
         throw new Error('Enter both string and a delimiter');
     }
     if(sentence.length === 0){
-        return 'Empty String not accepted'
+        throw new Error('Empty String not accepted');
     }
     if(typeof sentence !== 'string'){
         throw new Error("You must enter a string");
