@@ -9,6 +9,11 @@ describe('armstrongNumberGenerator', function () {
     });
 
     // // Failure test cases
+    it('should throw invalid input when number is not given as input', function () {
+        expect(() => {
+            functionObject.numberOfDigit("random");
+            }).toThrow('You must enter a number');      
+    });
     // it('should return number of digits', function () {
     //     const val = functionObject.numberOfDigit(122.89);
     //     expect(val).toEqual('Invalid DataType');

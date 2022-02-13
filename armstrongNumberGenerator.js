@@ -3,9 +3,9 @@ function numberOfDigit(number) {
     // if (number === undefined) {
     //     return "Enter the value"
     // }
-    // if (typeof (number) !== "number" || number % 1 != 0) {
-    //     return "Invalid DataType"
-    // }
+    if (typeof (number) !== "number" || number % 1 != 0) {
+        throw new Error("You must enter a integer value");
+    }
     while (number != 0) {
         digitCount++;
         number = parseInt(number / 10, 10);
