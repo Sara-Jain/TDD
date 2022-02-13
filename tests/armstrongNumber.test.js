@@ -37,14 +37,16 @@ describe('armstrongNumberGenerator', function () {
             functionObject.isArmstrongNumber("random");
         }).toThrow('You must enter a integer value');
     });
-    // it('should return Negative value not allowed for negative value', function () {
-    //     const result = functionObject.isArmstrongNum(-12);
-    //     expect(result).toEqual('Negative value not allowed');
-    // });
-    // it('should throw error when integer range exceeded', function () {
-    //     const val = functionObject.isArmstrongNum(32768);
-    //     expect(val).toEqual("Inputs are out of range");
-    // });
+    it('should return Negative value not allowed for negative value', function () {
+        expect(() => {
+            functionObject.isArmstrongNumber(-213);
+        }).toThrow('You must enter a positive integer value');
+    });
+    it('should throw error when integer range exceeded', function () {
+        expect(() => {
+            functionObject.isArmstrongNumber(32768);
+        }).toThrow('Input value range exceeded');
+    });
 
     // // Success test cases
     // it('should return only armstrong numbers within the given range', function () {
