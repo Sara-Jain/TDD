@@ -12,17 +12,17 @@ describe('armstrongNumberGenerator', function () {
     it('should throw invalid input when number is not given as input', function () {
         expect(() => {
             functionObject.numberOfDigit("random");
-            }).toThrow('You must enter a integer value');      
+        }).toThrow('You must enter a integer value');
     });
     it('should throw invalid input when float value is given as input', function () {
         expect(() => {
             functionObject.numberOfDigit(122.89);
-            }).toThrow('You must enter a integer value');      
+        }).toThrow('You must enter a integer value');
     });
     it('should prompt to enter the value when no input is given', function () {
         expect(() => {
             functionObject.numberOfDigit();
-            }).toThrow('Enter a integer value');
+        }).toThrow('Enter a integer value');
     });
 
     // Test cases for isArmstrongNumber
@@ -30,19 +30,16 @@ describe('armstrongNumberGenerator', function () {
     it('should throw invalid input when float value is given as input', function () {
         expect(() => {
             functionObject.isArmstrongNumber(122.89);
-            }).toThrow('You must enter a integer value');      
+        }).toThrow('You must enter a integer value');
+    });
+    it('should throw invalid input when number is not given as input', function () {
+        expect(() => {
+            functionObject.isArmstrongNumber("random");
+        }).toThrow('You must enter a integer value');
     });
     // it('should return Negative value not allowed for negative value', function () {
     //     const result = functionObject.isArmstrongNum(-12);
     //     expect(result).toEqual('Negative value not allowed');
-    // });
-    // it('should return invalid input for non integer value', function () {
-    //     const result = functionObject.isArmstrongNum(-12.35);
-    //     expect(result).toEqual('Invalid datatype');
-    // });
-    // it('should return invalid input for non integer value', function () {
-    //     const result = functionObject.isArmstrongNum('sty');
-    //     expect(result).toEqual('Invalid datatype');
     // });
     // it('should throw error when integer range exceeded', function () {
     //     const val = functionObject.isArmstrongNum(32768);
