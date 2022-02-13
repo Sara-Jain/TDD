@@ -6,7 +6,7 @@ module.exports = function checkRepeatingWords(sentence,delimiter) {
         return 'Empty String not accepted'
     }
     if(typeof sentence !== 'string'){
-        return 'Invalid Datatype';
+        throw new Error("You must enter a string");
     }
     if(sentence.length > 100){
         return 'String length has to be less than or equal to 100';
