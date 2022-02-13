@@ -1,4 +1,4 @@
-module.exports = function chechRepeatingWords(sentence,delimiter) {
+module.exports = function checkRepeatingWords(sentence,delimiter) {
     if(sentence === undefined || delimiter === undefined){
         return 'Enter the both string and a delimiter';
     }
